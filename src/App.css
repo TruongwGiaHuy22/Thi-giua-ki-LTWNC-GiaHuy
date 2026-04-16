@@ -1,184 +1,296 @@
-.counter {
-  font-size: 16px;
-  padding: 5px 10px;
-  border-radius: 5px;
-  color: var(--accent);
-  background: var(--accent-bg);
-  border: 2px solid transparent;
-  transition: border-color 0.3s;
-  margin-bottom: 24px;
 
-  &:hover {
-    border-color: var(--accent-border);
-  }
-  &:focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 2px;
-  }
+* {
+  box-sizing: border-box;
 }
-
-.hero {
+body {
+  margin: 0;
+  background: #f9f3ed;
+  color: #2c1d14;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.khung-chinh {
+  width: 100%;
+  min-height: 100px;
+  background: #f9f3ed;
+}
+.khung-banner {
   position: relative;
-
-  .base,
-  .framework,
-  .vite {
-    inset-inline: 0;
-    margin: 0 auto;
-  }
-
-  .base {
-    width: 170px;
-    position: relative;
-    z-index: 0;
-  }
-
-  .framework,
-  .vite {
-    position: absolute;
-  }
-
-  .framework {
-    z-index: 1;
-    top: 34px;
-    height: 28px;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg)
-      scale(1.4);
-  }
-
-  .vite {
-    z-index: 0;
-    top: 107px;
-    height: 26px;
-    width: auto;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg)
-      scale(0.8);
-  }
+  overflow: hidden;
+  min-height: 450px;
 }
-
-#center {
+.anh-banner {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  display: block;
+}
+.header-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 40px;
+  z-index: 2;
+}
+.logo {
+  width: 80px;
+  height: auto;
+}
+.danh-muc {
+  position: absolute;
+  top: 20px;
+  right: 20px; 
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: flex-end; 
+  padding: 10px 10px;
+}
+.danh-muc span {
+  color: #ffffff;
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  white-space: nowrap;
+}
+.khung-duoi {
+  max-width: 1200px;
+  margin: -70px auto 40px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+  padding: 20px 20px 50px;
+}
+.anh-lon,
+.anh-nho {
+  overflow: hidden;
+  padding: 10px;
+}
+.anh-lon img,
+.anh-nho img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.anh-nho-cot {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+}
+.anh-lon {
+  min-height: 520px;
+}
+.anh-nho {
+  min-height: 250px;
+}
+.Khung-Cua-Menu {
+  max-width: 1200px;
+  margin: 0 auto 40px;
+  padding: 80px 30px 50px;
+  background-color: rgba(249, 243, 237, 0.95);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+  position: relative;
+  overflow: hidden;
+}
+.Khung-Cua-Menu::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(200, 243, 237, -0.5);
+}
+.Menu {
+  margin: 0;
+  text-align: center;
+  font-family: 'Dancing Script', cursive;
+  font-size: 72px;
+  color: black;
+  font-weight: 700;
+}
+.Nuoc-Uong {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 40px;
+  margin: 40px auto 0;
+  max-width: 920px;
+}
+.cot-menu {
   display: flex;
   flex-direction: column;
-  gap: 25px;
-  place-content: center;
-  place-items: center;
-  flex-grow: 1;
-
-  @media (max-width: 1024px) {
-    padding: 32px 20px 24px;
-    gap: 18px;
-  }
+  gap: 16px;
 }
-
-#next-steps {
+.Nuoc-Uong p {
   display: flex;
-  border-top: 1px solid var(--border);
-  text-align: left;
-
-  & > div {
-    flex: 1 1 0;
-    padding: 32px;
-    @media (max-width: 1024px) {
-      padding: 24px 20px;
-    }
-  }
-
-  .icon {
-    margin-bottom: 16px;
-    width: 22px;
-    height: 22px;
-  }
-
-  @media (max-width: 1024px) {
-    flex-direction: column;
-    text-align: center;
-  }
+  align-items: center;
+  gap: 16px;
+  margin: 0;
+  color: #3f2e24;
+  font-size: 25px;
+  font-weight: 700;
 }
-
-#docs {
-  border-right: 1px solid var(--border);
-
-  @media (max-width: 1024px) {
-    border-right: none;
-    border-bottom: 1px solid var(--border);
-  }
+.Nuoc-Uong p span:first-child {
+  white-space: nowrap;
 }
-
-#next-steps ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  gap: 8px;
-  margin: 32px 0 0;
-
-  .logo {
-    height: 18px;
-  }
-
-  a {
-    color: var(--text-h);
-    font-size: 16px;
-    border-radius: 6px;
-    background: var(--social-bg);
-    display: flex;
-    padding: 6px 12px;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    transition: box-shadow 0.3s;
-
-    &:hover {
-      box-shadow: var(--shadow);
-    }
-    .button-icon {
-      height: 18px;
-      width: 18px;
-    }
-  }
-
-  @media (max-width: 1024px) {
-    margin-top: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-
-    li {
-      flex: 1 1 calc(50% - 8px);
-    }
-
-    a {
-      width: 100%;
-      justify-content: center;
-      box-sizing: border-box;
-    }
-  }
+.dot-line {
+  flex: 1;
+  border-bottom: 1px dotted rgba(75, 47, 29, 0.55);
+  height: 1px;
 }
-
-#spacer {
-  height: 88px;
-  border-top: 1px solid var(--border);
-  @media (max-width: 1024px) {
-    height: 48px;
-  }
-}
-
-.ticks {
+.nut-xem-them {
+  margin: 40px auto 0;
   position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+.nut-xem-them img {
+  width: auto;
+  height: 60px;
+  display: block;
+}
+.nut-xem-them span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.Che-bien-ca-phe-chu {
+  max-width: 1300px;
+  margin: 0 auto 60px;
+  padding: 0 20px 40px;
+}
+.haianh-chebiencaphecon {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 30px;
+}
+.the-card {
+  overflow: hidden;
+}
+.the-card img {
   width: 100%;
-
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    top: -4.5px;
-    border: 5px solid transparent;
-  }
-
-  &::before {
-    left: 0;
-    border-left-color: var(--border);
-  }
-  &::after {
-    right: 0;
-    border-right-color: var(--border);
-  }
+  height: 400px;
+  object-fit: cover;
+}
+.the-card h2 {
+  text-align: left;
+  color: #2f1c12;
+  font-size: 26px;
+}
+.the-card p {
+  text-align: left;
+  color: #5a4031;
+  line-height: 1.85;
+}
+.chan-trang {
+  background: #231815;
+  color: white;
+  padding: 50px 20px 40px;
+}
+.phan-chan {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.cot-gioi-thieu,
+.cot-thong-tin {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex: 1;
+}
+.cot-gioi-thieu {
+  flex: 1.5;
+  min-width: 300px;
+}
+.cot-thong-tin {
+  flex: 1;
+  min-width: 220px;
+}
+.logo-chan {
+  width: 80px;
+  height: auto;
+}
+.dong-logo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.dong-logo h3 {
+  margin: 0;
+  font-size: 24px;
+  color: #ffffff;
+}
+.cot-thong-tin h4 {
+  margin: 0;
+  font-size: 24px;
+}
+.cot-gioi-thieu h4 {
+  color: #e8c15d;
+  font-size: 14px;
+  margin: 0;
+}
+.cot-gioi-thieu p,
+.cot-thong-tin p {
+  text-align: left;
+  margin: 6px 6px 6px 0;
+   color: #8ac0c0b1;
+  line-height: 1.5;
+}
+.cot-thong-tin h4 {
+   color: #e8c15d;
+}
+.cot-thong-tin p {
+  font-size: 15px;
+}
+.mang-xa-hoi {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.mang-xa-hoi span {
+  font-size: 7px;
+  color: #ffffff;
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.12);
+}
+.cot-fanpage .hop-fanpage {
+  padding: 16px 18px;
+  background: #ffffff;
+  color: #1a1a1a;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.logo-fanpage {
+  font-weight: 700;
+  font-size: 18px;
+  color: #1a1a1a;
+}
+.dat-ban {
+  margin-top: 20px;
+  align-self: flex-start;
+  padding: 12px 26px;
+  border: none;
+  border-radius: 999px;
+  background: #d8a73a;
+  color: #231815;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18);
 }
